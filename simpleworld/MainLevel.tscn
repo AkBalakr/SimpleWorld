@@ -1,6 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bdyvyvw8m2yrj"]
+[gd_scene load_steps=9 format=3 uid="uid://bdyvyvw8m2yrj"]
 
 [ext_resource type="PackedScene" uid="uid://ltrqpvqokwfn" path="res://player.tscn" id="1_jq6gy"]
+[ext_resource type="Script" uid="uid://ba8x0iriklbd7" path="res://obstacle.gd" id="2_o3cl4"]
+[ext_resource type="PackedScene" uid="uid://bcqyf7uev68o0" path="res://tree.tscn" id="3_fi62q"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rj4so"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -25,6 +27,7 @@ data = PackedVector3Array(5, 0, 5, -5, 0, 5, 5, 0, -5, -5, 0, 5, -5, 0, -5, 5, 0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_o3cl4")
+script = ExtResource("2_o3cl4")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.926729, 0.160521, 0.339714, 0.241641, -0.437732, 0.866025, 0.287719, 0.88466, 0.366871, 4.44887, 11, 5)
@@ -41,3 +44,5 @@ shape = SubResource("ConcavePolygonShape3D_jq6gy")
 
 [node name="Player" parent="." instance=ExtResource("1_jq6gy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.954094, 0)
+
+[node name="Tree" parent="." instance=ExtResource("3_fi62q")]

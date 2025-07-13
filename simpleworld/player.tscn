@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ltrqpvqokwfn"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://c3t73h03qnkjt" path="res://player.gd" id="1_4flbx"]
 [ext_resource type="ArrayMesh" uid="uid://c2xkpbjgoofx7" path="res://AnthroCat.obj" id="2_onrkg"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_i3pqv"]
