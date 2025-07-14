@@ -15,6 +15,8 @@ var GRAVITY = -(ProjectSettings.get_setting("physics/3d/default_gravity"))
 @onready var twist_pivot = $TwistPivot
 @onready var pitch_pivot = $TwistPivot/PitchPivot
 @onready var player_camera = $TwistPivot/PitchPivot/SpringArm3D
+@onready var player_mesh = $MeshInstance3D
+
 
 #function runs every frame; delta representing the amount of frames skipped due to hardware
 #USE THE DELTA TO CALCULATE MOVEMENT in order to keep a consistent feel despite frame skips
@@ -26,6 +28,7 @@ func _process(delta: float) -> void:
 	camera_rotate()
 	get_move_input(delta)
 	move_and_slide()
+	#print("get_platform_angular_velocity", get_platform_angular_velocity())
 
 #Constantly runs within _process and is the main driver for the camera functionality
 func camera_rotate():
@@ -43,18 +46,34 @@ func camera_rotate():
 	#prevents drifting
 	twist_input = 0
 	pitch_input = 0
-
+var max_jumps = 2; var jumps = 0;
 func get_move_input(delta):
-	if Input.is_action_just_pressed("jump"):
+	
+	if Input.is_action_just_pressed("jump") and jumps < max_jumps:
 		velocity.y = JUMP_VELOCITY*delta
+		jumps += 1
+	elif jumps >= max_jumps and is_on_floor(): 
+		print("brother I am grounded")
+		jumps = 0
+		
 	#inorder to allow movement based on camera orientation; we save the y velocicity in order to freely do the x and z calculations
 	var vy = velocity.y
 	velocity.y = 0
 	#creates a Vector2 element that stores the 2d axis of movement from the user's input
 	var input = Input.get_vector("moveleft", "moveright", "moveup", "movedown")
+	#if input.x + input.y > 0:
+		#print("input", input)
 	#converts the cardinal directions of the user's input and rotats it around the y axis based on the camera angle in radians
 	var dir = Vector3(input.x, 0, input.y).rotated(Vector3.UP, twist_pivot.rotation.y)
-	#applies the camera based direction found
+	#print("velocty", velocity)
+	
+	#take velocity.x and velocity.z and calculate angle to determine orientation of the character
+	#later find a way to make it a more smooth rotation
+	#var face_direction = velocity.normalized()
+	#face_direction[1] = 0
+	#print("face_direction", face_direction)
+	#look_at(face_direction, Vector3.UP) # not smooth at all (hard to see if its actually working with pure white)
+	
 	velocity = dir*(SPEED+(delta*SPEED))
 	velocity.y = vy
 
