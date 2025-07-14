@@ -23,7 +23,7 @@ use_collision = true
 size = Vector3(75.3108, 0.1, 79.4539)
 
 [node name="river" type="CSGBox3D" parent="Node"]
-transform = Transform3D(0.853078, 0, 0.521784, 0, 1, 0, -0.521784, 0, 0.853078, -22.4084, -0.244324, 35.8042)
+transform = Transform3D(0.344053, 0, 0.93895, 0, 1, 0, -0.93895, 0, 0.344053, -26.931, -0.244324, 38.9381)
 size = Vector3(1, 1, 96.7147)
 
 [node name="TwistedTree_1" parent="." instance=ExtResource("2_pn5gc")]
