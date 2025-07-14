@@ -70,8 +70,13 @@ func get_move_input(delta):
 	#take velocity.x and velocity.z and calculate angle to determine orientation of the character
 	#later find a way to make it a more smooth rotation
 	#var face_direction = velocity.normalized()
+	var face_direction = velocity.normalized()
+	print("velocity ", velocity," norm: ", face_direction)
 	#face_direction[1] = 0
 	#print("face_direction", face_direction)
+	#print("face_direcation", face_direction)
+	#rotate(tan(face_direction[0]/face_direction[2]))
+	#print("tan: ", face_direction[0]/face_direction[2])
 	#look_at(face_direction, Vector3.UP) # not smooth at all (hard to see if its actually working with pure white)
 	
 	velocity = dir*(SPEED+(delta*SPEED))
