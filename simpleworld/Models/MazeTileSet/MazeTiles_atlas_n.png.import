@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctebrm3j0p48g"
+uid="uid://pwy80rlgx0ap"
 path.s3tc="res://.godot/imported/MazeTiles_atlas_n.png-f94301f0611bc38d1f2eba2002b0923a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "5a4d4370d3fa83221e1f3dde23ba7de6"
 }
 
 [deps]
@@ -28,7 +25,7 @@ compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://MazeTiles_atlas_n.png"
+roughness/src_normal="res://Models/MazeTileSet/MazeTiles_atlas_n.png"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

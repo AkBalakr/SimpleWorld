@@ -46,13 +46,14 @@ func camera_rotate():
 	#prevents drifting
 	twist_input = 0
 	pitch_input = 0
+
 var max_jumps = 2; var jumps = 0;
 func get_move_input(delta):
 	
 	if Input.is_action_just_pressed("jump") and jumps < max_jumps:
 		velocity.y = JUMP_VELOCITY*delta
 		jumps += 1
-	elif jumps >= max_jumps and is_on_floor(): 
+	elif is_on_floor(): 
 		print("brother I am grounded")
 		jumps = 0
 		
