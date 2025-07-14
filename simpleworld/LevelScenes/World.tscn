@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://bpnnt5kntuagh"]
+
+[ext_resource type="PackedScene" uid="uid://ltrqpvqokwfn" path="res://Entities/Player/player.tscn" id="1_ud1cs"]
+[ext_resource type="PackedScene" uid="uid://n5b56yxdlnuo" path="res://Models/Stylized Nature MegaKit/FBX/TwistedTree_1.fbx" id="2_pn5gc"]
+[ext_resource type="PackedScene" uid="uid://cl3bi1srgnk0x" path="res://Models/Stylized Nature MegaKit/FBX/TwistedTree_2.fbx" id="3_jh6h2"]
+[ext_resource type="PackedScene" uid="uid://cyhv34ba8q7fn" path="res://Models/Stylized Nature MegaKit/FBX/TwistedTree_3.fbx" id="4_bkm0j"]
+[ext_resource type="PackedScene" uid="uid://bnr6n7drt1143" path="res://Models/Stylized Nature MegaKit/FBX/TwistedTree_4.fbx" id="5_d43pc"]
+[ext_resource type="PackedScene" uid="uid://ccm5n12n4qy41" path="res://Models/Stylized Nature MegaKit/FBX/TwistedTree_5.fbx" id="6_fxvy6"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_ud1cs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0749545, 1.26212, 0.0646005)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.715559, 0.698553, 0, -0.698553, 0.715559, -0.0281706, 19.9192, 20.1727)
+
+[node name="Node" type="Node" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Node"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.2214, 0, 34.727)
+use_collision = true
+size = Vector3(75.3108, 0.1, 79.4539)
+
+[node name="river" type="CSGBox3D" parent="Node"]
+transform = Transform3D(0.344053, 0, 0.93895, 0, 1, 0, -0.93895, 0, 0.344053, -26.931, -0.244324, 38.9381)
+size = Vector3(1, 1, 96.7147)
+
+[node name="TwistedTree_1" parent="." instance=ExtResource("2_pn5gc")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -4.04881, 0, 0)
+
+[node name="TwistedTree_2" parent="." instance=ExtResource("3_jh6h2")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -2.59047, -2.38419e-07, 3.44246)
+
+[node name="TwistedTree_3" parent="." instance=ExtResource("4_bkm0j")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.89182, 2.38419e-07, 3.46167)
+
+[node name="TwistedTree_4" parent="." instance=ExtResource("5_d43pc")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 4.28701, 0, 2.52892)
+
+[node name="TwistedTree_5" parent="." instance=ExtResource("6_fxvy6")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 2.81236, 0, -3.61432)

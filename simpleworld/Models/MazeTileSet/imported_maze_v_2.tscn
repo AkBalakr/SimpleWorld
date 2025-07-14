@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cissoxq0np3v3"]
+
+[ext_resource type="PackedScene" uid="uid://ct8iwapw2xxvr" path="res://Models/MazeTileSet/ImportedMazeV2.glb" id="1_gr8o0"]
+
+[node name="ImportedMazeV2" instance=ExtResource("1_gr8o0")]
