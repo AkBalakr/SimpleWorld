@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bdyvyvw8m2yrj"]
+[gd_scene load_steps=10 format=3 uid="uid://bdyvyvw8m2yrj"]
 
 [ext_resource type="PackedScene" uid="uid://ltrqpvqokwfn" path="res://player.tscn" id="1_jq6gy"]
 [ext_resource type="Script" uid="uid://ba8x0iriklbd7" path="res://obstacle.gd" id="2_o3cl4"]
@@ -23,6 +23,9 @@ size = Vector2(10, 10)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_jq6gy"]
 data = PackedVector3Array(5, 0, 5, -5, 0, 5, 5, 0, -5, -5, 0, 5, -5, 0, -5, 5, 0, -5)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fi62q"]
+albedo_color = Color(0.32549, 0.14902, 0.027451, 1)
+
 [node name="Node3D" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -46,3 +49,4 @@ shape = SubResource("ConcavePolygonShape3D_jq6gy")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.954094, 0)
 
 [node name="Tree" parent="." instance=ExtResource("3_fi62q")]
+surface_material_override/0 = SubResource("StandardMaterial3D_fi62q")
